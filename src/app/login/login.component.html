@@ -1,0 +1,30 @@
+
+    <div class="container-menu">
+        <form class="menu" [formGroup]="loginForm">
+            <div>
+                <label for="email">E-mail</label><br>
+                <input type="text" name="email" formControlName="email"><br>
+                <span *ngIf="(loginForm.controls['email'].dirty || loginForm.controls['email'].touched) &&
+                loginForm.controls['email'].errors?.['required']" appLabelErro class="labelError">digite e-mail</span>
+            </div>
+
+            <div>
+                <label for="senha">Senha</label><br>
+                <input type="text" name="senha" formControlName="senha"><br>
+                <span *ngIf="(loginForm.controls['senha'].dirty || loginForm.controls['senha'].touched) &&
+                loginForm.controls['senha'].errors?.['required']" appLabelErro class="labelError">digite senha</span>
+            </div>
+        
+            <button (click)="logar()">Entrar</button>
+            <button (click)="recoverPass()">Esqueci a senha</button>
+        </form>
+</div>
+
+
+
+
+<!-- 
+
+// Os botões:
+// Entrar
+// Quando clicado, caso ambos os campos do formulário estejam preenchidos, o usuário será redirecionado para a tela inicial/h -->
